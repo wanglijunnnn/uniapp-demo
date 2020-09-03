@@ -3,16 +3,16 @@
 		<view :style="{borderRadius:radius+'px',backgroundColor: bgColor}" class="uni-searchbar__box" @click="searchClick">
 			<!-- #ifdef MP-ALIPAY -->
 			<view class="uni-searchbar__box-icon-search">
-				<uni-icons color="#999999" size="18" type="search" />
+				<uni-icons color="#fff" size="18" type="search" />
 			</view>
 			<!-- #endif -->
 			<!-- #ifndef MP-ALIPAY -->
-			<uni-icons color="#999999" class="uni-searchbar__box-icon-search" size="18" type="search" />
+			<uni-icons color="#fff" class="uni-searchbar__box-icon-search" size="18" type="search" />
 			<!-- #endif -->
 			<input v-if="show" :focus="showSync" :placeholder="placeholder" :maxlength="maxlength" @confirm="confirm" class="uni-searchbar__box-search-input" confirm-type="search" type="text" v-model="searchVal" />
 			<text v-else class="uni-searchbar__text-placeholder">{{ placeholder }}</text>
 			<view v-if="show && (clearButton==='always'||clearButton==='auto'&&searchVal!=='')" class="uni-searchbar__box-icon-clear" @click="clear">
-				<uni-icons color="#999999" class="" size="24" type="clear" />
+				<uni-icons color="#fff" class="" size="24" type="clear" />
 			</view>
 		</view>
 		<text @click="cancel" class="uni-searchbar__cancel" v-if="cancelButton ==='always' || show && cancelButton ==='auto'">{{cancelText}}</text>
@@ -144,9 +144,10 @@
 		flex-direction: row;
 		position: relative;
 		padding: 8px;
-		background-color: #ffffff;
 	}
-
+	.uni-input-placeholder{
+		color: #fff;
+	}
 	.uni-searchbar__box {
 		/* #ifndef APP-NVUE */
 		display: flex;
@@ -160,9 +161,6 @@
 		align-items: center;
 		height: 36px;
 		padding: 5px 8px 5px 0px;
-		border-width: 0.5px;
-		border-style: solid;
-		border-color: #e5e5e5;
 	}
 
 	.uni-searchbar__box-icon-search {
@@ -179,7 +177,7 @@
 	.uni-searchbar__box-search-input {
 		flex: 1;
 		font-size: 14px;
-		color: #333;
+		color: #fff;
 	}
 
 	.uni-searchbar__box-icon-clear {
@@ -190,7 +188,7 @@
 
 	.uni-searchbar__text-placeholder {
 		font-size: 14px;
-		color: #808080;
+		color: #fff;
 		margin-left: 5px;
 	}
 
@@ -198,6 +196,6 @@
 		padding-left: 10px;
 		line-height: 36px;
 		font-size: 14px;
-		color: #333;
+		color: #fff;
 	}
 </style>
